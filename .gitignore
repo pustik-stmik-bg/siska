@@ -1,0 +1,10 @@
+/bootstrap
+/storage
+/tests
+/vendor
+/node_modules
+.env
+.env.example
+artisan
+readme.md
+server.php
