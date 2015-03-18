@@ -1,0 +1,15 @@
+{
+    "name": "Jurusan",
+    "alias": "jurusan",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "priority": 0,
+    "providers": [
+        "Modules\\Jurusan\\Providers\\JurusanServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}

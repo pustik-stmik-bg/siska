@@ -1,11 +1,10 @@
-<?php namespace App\Http\Controllers;
+<?php namespace Modules\Jurusan\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\View;
+use Modules\Jurusan\Entities\TahunAkademik;
 
-use Illuminate\Http\Request;
-
-class JurusanTahunAkademik extends Controller {
+class TahunAkademikController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,9 +13,9 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function index()
 	{
-		$data = JurusanTahunAkademik::all();
+		$data = TahunAkademik::all();
 
-		return view('jurusan.tahun_akademik.index', $data);
+		return View::make('jurusan::tahun_akademik.index')->with('data', $data);
 	}
 
 	/**
@@ -26,7 +25,7 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function create()
 	{
-		return view('jurusan.tahun_akademik.input');
+		return View::make('jurusan::tahun_akademik.input');
 	}
 
 	/**
@@ -36,7 +35,7 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function store(Request $request)
 	{
-		JurusanTahunAkademik::create($request->all());
+		TahunAkademik::create($request->all());
 
 		redirect(url('/jurusan/tahun_akademik/create'));
 	}
@@ -49,9 +48,9 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function show($id)
 	{
-		$data = JurusanTahunAkademik::find($id);
+		$data = TahunAkademik::find($id);
 
-		return view('jurusan.tahun_akademik.show', $data);
+		return View::make('jurusan::tahun_akademik.show')->with('data', $data);
 	}
 
 	/**
@@ -62,9 +61,9 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function edit($id)
 	{
-		$data = JurusanTahunAkademik::find($id);
+		$data = TahunAkademik::find($id);
 
-		return view('jurusan.tahun_akademik.input', $data);
+		return View::make('jurusan::tahun_akademik.input')->with('data', $data);
 	}
 
 	/**
@@ -75,7 +74,7 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function update($id, Request $request)
 	{
-		$data = JurusanTahunAkademik::find($id);
+		$data = TahunAkademik::find($id);
 		$data->nama_tahun_akademik = $request->nama_tahun_akademik;
 		$data->semester = $request->semester;
 		$data->status = $request->status;
@@ -94,10 +93,10 @@ class JurusanTahunAkademik extends Controller {
 	 */
 	public function destroy($id)
 	{
-		$data = JurusanTahunAkademik::find($id);
+		$data = TahunAkademik::find($id);
 		$data->delete();
 
 		redirect(url('/jurusan/tahun_akademik'));
 	}
-
+	
 }
