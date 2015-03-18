@@ -16,6 +16,11 @@ class TahunAkademik extends Model {
 	 *
 	 * @var array
 	 */
-    protected $fillable = ['kode_tahun_akademik', 'nama_tahun_akademik', 'semester', 'status'];
+    protected $fillable = [
+    	'kode_tahun_akademik',
+    	'nama_tahun_akademik',
+    	'semester',
+    	'status'
+    ];
 
 }

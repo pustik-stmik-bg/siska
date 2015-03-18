@@ -1,4 +1,4 @@
-@extends('jurusan::layouts.master')
+@extends('layout.master')
 
 @section('content')
 	
