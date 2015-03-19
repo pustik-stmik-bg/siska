@@ -5,14 +5,14 @@ namespace Modules\Jurusan\Entities;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TahunAkademik extends Model {
+class KelompokMatakuliah extends Model {
 
-	protected $table = 'jurusan_tahun_akademik';
+	protected $table = 'jurusan_kelompok_matakuliah';
 	public $timestamps = true;
 
 	use SoftDeletes;
 
 	protected $dates = ['deleted_at'];
-	protected $fillable = array('tahun_akademik', 'semester', 'status', 'tanggal_mulai', 'tanggal_berakhir');
+	protected $fillable = array('kode_kelompok', 'nama_kelompok');
 
 }
