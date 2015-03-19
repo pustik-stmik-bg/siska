@@ -22,6 +22,10 @@ class CreateUsersTable extends Migration {
 			$table->timestamps();
 		});
 	}
+<<<<<<< HEAD
+	//halo
+=======
+>>>>>>> 9e3039d85a68b738a2ce589efdab36e64c945606
 
 	/**
 	 * Reverse the migrations.
