@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration {
 	}
 	//fix fix fix
 
+	/* bla bla bla */
 	/**
 	 * Reverse the migrations.
 	 *
