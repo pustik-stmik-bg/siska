@@ -17,9 +17,10 @@
 
 		<div class="wrapper">
 
-		@include('layout.header')
-                @include('layout.sidebar')
-                @include('layout.content')
+			@include('layout.header')
+			@include('layout.sidebar')
+			@include('layout.content')
+
 		</div>
 
 		{!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') !!}
