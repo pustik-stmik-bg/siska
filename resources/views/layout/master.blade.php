@@ -24,8 +24,10 @@
 		</div>
 
 		{!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') !!}
-		{!! Html::script('assets/js/app.min.js') !!}
-		{!! Html::script('assets/js/pages/dashboard2.js') !!}
+		{!! Html::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js') !!}
+		{!! Html::script('assets/js/adminlte/app.min.js') !!}
+		{!! Html::script('assets/js/adminlte/dashboard2.js') !!}
+		{!! Html::script('assets/js/adminlte/jquery.slimscroll.min.js') !!}
 
 	</body>
 </html>
