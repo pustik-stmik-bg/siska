@@ -142,6 +142,7 @@ return [
 		'Illuminate\Html\HtmlServiceProvider',
 		'Pingpong\Modules\ModulesServiceProvider',
 		'Zizaco\Entrust\EntrustServiceProvider',
+		'Zofe\Rapyd\RapydServiceProvider',
 
 		/*
 		 * Application Service Providers...

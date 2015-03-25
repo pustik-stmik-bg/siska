@@ -3,6 +3,7 @@
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
 use Modules\Jurusan\Entities\TahunAkademik;
+use Zofe\Rapyd\DataGrid\DataGrid;
 
 class TahunAkademikController extends Controller {
 
@@ -25,7 +26,11 @@ class TahunAkademikController extends Controller {
 	 */
 	public function create()
 	{
-		return View::make('jurusan::tahun_akademik.input');
+		//return View::make('jurusan::tahun_akademik.input');
+
+		$data = DataGrid::source(new TahunAkademik);
+
+		return View::make('jurusan::tahun_akademik.create', compact('data'));
 	}
 
 	/**
