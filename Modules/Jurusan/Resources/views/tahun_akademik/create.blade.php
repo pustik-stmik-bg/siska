@@ -8,15 +8,13 @@
 				<div class="box-body">
 					
 					<?php
-					$data->add('tahun_akademik','Tahun Akademik', true);
-					$data->add('semester','Semester', true);
-					$data->add('tanggal_mulai','Tanggal Mulai', true);
-					$data->add('tanggal_berakhir','Tanggal Berakhir', true);
-					$data->add('status','Status', true);
-					$data->edit('/tahun_akademik', 'Action','modify|delete', 'kode_tahun_akademik');
-					$data->link('/tahun_akademik/create', "Tambah", "TR");
-					$data->paginate(10);
-					$data->attributes=array("class" => "table table-bordered table-hover");
+					$data->add('tahun_akademik','Tahun Akademik', 'text');
+					$data->add('semester','Semester','select')->options(array('1' => 'Ganjil', '0' => 'Genap'));
+					$data->add('status','Status','select')->options(array('N' => 'Tidak Aktif', 'A' => 'Aktif'));
+					$data->add('tanggal_mulai','Tgl Mulai','date')->format('d/m/Y');
+					$data->add('tanggal_berakhir','Tgl Berakhir', 'date')->format('d/m/Y');
+					$data->submit('SIMPAN', 'BR');
+					$data->link('/jurusan/tahun_akademik', 'KEMBALI', 'BR', array('class' => 'btn btn-warning'));
 					?>
 
 					{!! $data !!}

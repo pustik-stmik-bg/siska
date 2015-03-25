@@ -2,15 +2,19 @@
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\View;
-use Modules\Jurusan\Entities\TahunAkademik;
 use Zofe\Rapyd\DataGrid\DataGrid;
+use Zofe\Rapyd\DataForm\DataForm;
+use Modules\Jurusan\Entities\TahunAkademik;
 
 class TahunAkademikController extends Controller {
 
-	protected $moduleSlug = 'jurusan';
-	protected $moduleName = 'Jurusan';
-	protected $submodSlug = 'tahun_akademik';
-	protected $submodName = 'Tahun Akademik';
+	protected $info = array(
+		'moduleSlug' => 'jurusan',
+		'moduleName' => 'Jurusan',
+		'submodSlug' => 'tahun_akademik',
+		'submodName' => 'Tahun Akademik',
+		'submodAction' => 'List',
+	);
 
 	/**
 	 * Display a listing of the resource.
@@ -19,9 +23,10 @@ class TahunAkademikController extends Controller {
 	 */
 	public function index()
 	{
-		$data = TahunAkademik::all();
+		$info = $this->info;
+		$data = DataGrid::source(new TahunAkademik);
 
-		return View::make('jurusan::tahun_akademik.index')->with('data', $data);
+		return View::make('jurusan::tahun_akademik.index', compact('info', 'data'));
 	}
 
 	/**
@@ -31,20 +36,10 @@ class TahunAkademikController extends Controller {
 	 */
 	public function create()
 	{
-		//return View::make('jurusan::tahun_akademik.input');
+		$info = $this->info;
+		$data = DataForm::source(new TahunAkademik);
 
-		$data = DataGrid::source(new TahunAkademik);
-
-		$info['moduleSlug'] = $this->moduleSlug;
-		$info['moduleName'] = $this->moduleName;
-		$info['submodSlug'] = $this->submodSlug;
-		$info['submodName'] = $this->submodName;
-		$info['submodAction'] = 'List';
-
-		//$moduleName = $this->moduleName;
-		//$moduleAction = 'List';
-
-		return View::make('jurusan::tahun_akademik.create', compact('data', 'info'));
+		return View::make('jurusan::tahun_akademik.create', compact('info', 'data'));
 	}
 
 	/**
