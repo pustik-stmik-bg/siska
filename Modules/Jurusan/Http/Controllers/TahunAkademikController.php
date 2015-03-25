@@ -7,6 +7,11 @@ use Zofe\Rapyd\DataGrid\DataGrid;
 
 class TahunAkademikController extends Controller {
 
+	protected $moduleSlug = 'jurusan';
+	protected $moduleName = 'Jurusan';
+	protected $submodSlug = 'tahun_akademik';
+	protected $submodName = 'Tahun Akademik';
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -30,7 +35,16 @@ class TahunAkademikController extends Controller {
 
 		$data = DataGrid::source(new TahunAkademik);
 
-		return View::make('jurusan::tahun_akademik.create', compact('data'));
+		$info['moduleSlug'] = $this->moduleSlug;
+		$info['moduleName'] = $this->moduleName;
+		$info['submodSlug'] = $this->submodSlug;
+		$info['submodName'] = $this->submodName;
+		$info['submodAction'] = 'List';
+
+		//$moduleName = $this->moduleName;
+		//$moduleAction = 'List';
+
+		return View::make('jurusan::tahun_akademik.create', compact('data', 'info'));
 	}
 
 	/**
