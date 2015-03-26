@@ -29,26 +29,10 @@
 	{!! Html::script('https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js') !!}
 	{!! Html::script('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js') !!}
 	{!! Html::script('http://www.rapyd.com/packages/zofe/rapyd/assets/redactor/jquery.browser.min.js') !!}
-	{!! Html::script('http://www.rapyd.com/packages/zofe/rapyd/assets/redactor/redactor.min.js') !!}
-	{!! Html::script('http://www.rapyd.com/packages/zofe/rapyd/assets/datepicker/bootstrap-datepicker.js') !!}
 	{!! Html::script('assets/js/adminlte/app.min.js') !!}
-	{!! Html::script('assets/js/adminlte/dashboard2.js') !!}
 	{!! Html::script('assets/js/adminlte/jquery.slimscroll.min.js') !!}
+	{!! Rapyd::scripts() !!}
 
-	<script type="text/javascript">
-		$(document).ready(function () {
-			$('#tanggal_mulai').datepicker({
-				format: 'dd/mm/yyyy',
-				todayBtn: 'linked',
-				autoclose: true
-			});
-			$('#tanggal_berakhir').datepicker({
-				format: 'dd/mm/yyyy',
-				todayBtn: 'linked',
-				autoclose: true
-			});
-		});
-	</script>
 
 </body>
 </html>
