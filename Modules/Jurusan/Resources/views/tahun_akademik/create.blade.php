@@ -1,5 +1,13 @@
 @extends('layout.master')
 
+@section('init')
+<?php
+$js  = array(
+		'date'         => 'tanggal_mulai|tanggal_berakhir',
+	);
+?>
+@stop
+
 @section('content')
 
 	<div class="row">
@@ -7,22 +15,30 @@
 			<div class="box">
 				<div class="box-body">
 					
-					<?php
-					$data->add('tahun_akademik','Tahun Akademik', 'text');
-					$data->add('semester','Semester','select')->options(array('1' => 'Ganjil', '0' => 'Genap'));
-					$data->add('status','Status','select')->options(array('N' => 'Tidak Aktif', 'A' => 'Aktif'));
-					$data->add('tanggal_mulai','Tgl Mulai','date')->format('d/m/Y');
-					$data->add('tanggal_berakhir','Tgl Berakhir', 'date')->format('d/m/Y');
-					$data->submit('SIMPAN', 'BR');
-					$data->link('/jurusan/tahun_akademik', 'KEMBALI', 'BR', array('class' => 'btn btn-warning'));
-					?>
+					{!! Form::open(array('url' => '/jurusan/tahun_akademik/store', 'method' => 'POST')) !!}
 
-					{!! $data !!}
+					{!! Form::label('tahun_akademik', 'Tahun_akademik:') !!}
+					{!! Form::text('tahun_akademik') !!}
+
+					{!! Form::label('semester', 'Semester:') !!}
+					{!! Form::text('semester') !!}
+
+					{!! Form::label('status', 'Status:') !!}
+					{!! Form::text('status') !!}
+
+					{!! Form::label('tanggal_mulai', 'Tanggal Mulai:') !!}
+					{!! Form::text('tanggal_mulai') !!}
+
+					{!! Form::label('tanggal_berakhir', 'Tanggal Berakhir:') !!}
+					{!! Form::text('tanggal_berakhir') !!}
+
+					{!! Form::submit() !!}
+
+					{!! Form::close() !!}
 
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 @stop
