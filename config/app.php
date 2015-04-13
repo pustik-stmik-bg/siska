@@ -207,6 +207,7 @@ return [
 		'Form'      => 'Illuminate\Html\FormFacade',
 		'Html'      => 'Illuminate\Html\HtmlFacade',
 		'Entrust'   => 'Zizaco\Entrust\EntrustFacade',
+		'Assets'	=> 'App\Assets',
 
 	],
 

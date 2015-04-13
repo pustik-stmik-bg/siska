@@ -1,5 +1,13 @@
 @extends('layout.master')
 
+@section('init')
+<?php
+$js  = array(
+		'date'         => 'tanggal_mulai|tanggal_berakhir',
+	);
+?>
+@stop
+
 @section('content')
 
 	<div class="row">
@@ -25,6 +33,5 @@
 			</div>
 		</div>
 	</div>
-
 
 @stop

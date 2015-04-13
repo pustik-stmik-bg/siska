@@ -1,7 +1,7 @@
 <?php
 
 //dataform routing
-Burp::post(null, 'process=1', array('as'=>'save', function() {
+Burp::post(null, '/store', array('as'=>'save', function() {
     BurpEvent::queue('dataform.save');
 }));
 
